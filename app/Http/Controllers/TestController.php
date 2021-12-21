@@ -12,7 +12,7 @@ class TestController extends Controller
     {
         return view('index', ['txt' => 'フォームを入力']);
     }
-    public function post(request $request)
+    public function post(request $fillable)
     $contact =new contact;
     $form = request->all();
     unset($form['_token']);
