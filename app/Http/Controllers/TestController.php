@@ -15,9 +15,9 @@ class TestController extends Controller
     public function post(request $request)
     $contact =new contact;
     $form = request->all();
-    unset ($form['-token-']);
+    unset($form['_token']);
     $contact->fill($form)->save();
-    return redurect('/verror');
+    return rediurect('/verror');
     {
         return view('index', ['txt' => '正しい入力です']);
     }
