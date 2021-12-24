@@ -10,14 +10,16 @@ class TestController extends Controller
 {
     public function index(Request $request)
     {
-        return view('index', ['txt' => 'フォームを入力']);
+        return view('index');
     }
-    public function post(request $fillable)
+    public function post(request $request)
+    {
     $contact =new contact;
     $form = request->all();
     unset($form['_token']);
     $contact->fill($form)->save();
     return rediurect('/verror');
+    }
     {
         return view('index', ['txt' => '正しい入力です']);
     }
